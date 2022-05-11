@@ -23,18 +23,22 @@
             <h3 class="subtitle">Welcome back! Please enter your details.</h3>
             <div class="email-input">
               <span class="input-title">Email</span>
-              <input type="email" placeholder="Enter your email" />
+              <input
+                class="input"
+                type="email"
+                placeholder="Enter your email"
+              />
             </div>
             <div class="password-input">
               <span class="input-title">Password</span>
-              <input type="password" placeholder="********" />
+              <input class="input" type="password" placeholder="********" />
             </div>
             <div class="recovery">
               <div class="remember">
-                <input type="checkbox" />
-                <span class="checkbox-title">Remember me</span>
+                <input type="checkbox" id="check" />
+                <label for="check">Remember me</label>
               </div>
-              <div class="forgot">Forgot password</div>
+              <div class="forgot"><a href="#">Forgot password</a></div>
             </div>
             <button class="btn btn-primary">Sign in</button>
             <button class="btn btn-secondary">

@@ -79,7 +79,7 @@ section {
   margin-bottom: 6px;
 }
 
-input {
+.input {
   width: 313.97px;
   height: 41.31px;
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -87,16 +87,21 @@ input {
   border-radius: 12px;
   background-color: transparent;
   outline: none;
+  padding: 0px 20px;
 }
-input::placeholder {
+
+.input:focus {
+  border: 1px solid black;
+}
+.input::placeholder {
   font-weight: 300;
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0.03em;
   color: #636364;
-  padding-left: 20px;
 }
 
+/* Castomizing the checkbox */
 .recovery {
   display: flex;
   justify-content: space-between;
@@ -105,30 +110,89 @@ input::placeholder {
 .remember {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.checkbox-title {
+[type="checkbox"] {
+  opacity: 0;
+}
+[type="checkbox"] + label {
+  position: relative;
   padding-left: 6px;
+  display: inline-block;
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.03em;
   color: #181818;
-}
-.remember input {
-  width: 15px;
-  height: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
-  background: transparent;
+  cursor: pointer;
 }
 
-.forgot {
+[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -11px;
+  width: 14px;
+  height: 14px;
+  outline: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+[type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -11px;
+  width: 14px;
+  height: 14px;
+  outline: 1px solid #000;
+  border-radius: 4px;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -11px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../img/icons8-check-96.png);
+  background-size: contain;
+  border-radius: 4px;
+  cursor: pointer;
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+[type="checkbox"]:not(:checked) + label::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -11px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../img/icons8-check-96.png);
+  background-size: contain;
+  border-radius: 4px;
+  cursor: pointer;
+  transform: scale(0);
+  opacity: 0;
+}
+/* castom checkbox */
+
+.forgot a {
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.03em;
   color: #181818;
+  text-decoration: none;
 }
 .login-image {
   height: 100%;
@@ -141,6 +205,7 @@ input::placeholder {
   border-radius: 12px;
   margin-bottom: 11px;
   border: none;
+  cursor: pointer;
 }
 .btn-primary {
   font-weight: 500;
